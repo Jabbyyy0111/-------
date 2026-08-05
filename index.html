@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#241445" />
+    <title>Polymer Alchemist | นักเล่นแร่แปรธาตุพอลิเมอร์</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { display: ['"Trebuchet MS"', 'sans-serif'] },
+            colors: { ink: '#211432', plum: '#49216B', potion: '#8A4FFF', mint: '#62E7BA', gold: '#FFC75A' },
+            boxShadow: { glow: '0 0 35px rgba(138,79,255,.36)' }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body class="min-h-screen bg-ink font-display text-white selection:bg-potion selection:text-white">
+    <main id="app" class="relative min-h-screen overflow-x-hidden">
+      <div class="lab-orb orb-one"></div><div class="lab-orb orb-two"></div><div class="stars"></div>
+
+      <section id="mainMenu" class="relative z-10 mx-auto flex min-h-screen max-w-5xl items-center px-4 py-8 sm:px-6">
+        <div class="grid w-full overflow-hidden rounded-3xl border border-white/15 bg-[#2b1848]/90 shadow-glow backdrop-blur md:grid-cols-[1.1fr_.9fr]">
+          <div class="p-7 sm:p-10"><div class="mb-6 flex items-center gap-3"><span class="logo-mark">⚗</span><div><p class="text-xs font-bold tracking-[.24em] text-mint">POLYMER ALCHEMIST</p><p class="text-sm text-violet-200">ร้านแปรธาตุวัสดุ</p></div></div><p class="eyebrow">เกมเรียนรู้เคมี ม.ปลาย</p><h1 class="text-4xl font-black leading-tight sm:text-5xl">เปลี่ยนวัสดุธรรมดา<br /><span class="text-gold">ให้พิเศษด้วยเคมี</span></h1><p class="mt-5 max-w-xl leading-7 text-violet-100">รับบทนักเล่นแร่แปรธาตุ แก้ปัญหาวัสดุจริงด้วยพอลิเมอร์ สารเติมแต่ง และสูตรปรับสมบัติ</p><div class="mt-8 flex flex-wrap gap-3"><button id="menuStart" class="primary-btn px-5 py-3 text-base" type="button">เริ่มภารกิจ ✨</button><button id="openStudyGuide" class="secondary-btn px-5 py-3" type="button">📚 คลังความรู้พอลิเมอร์</button></div><p class="mt-4 text-xs text-violet-300">เริ่มเล่นได้ทันที หรืออ่านคู่มือทบทวนทั้งหมดก่อนก็ได้</p></div>
+          <div class="menu-visual"><div class="menu-orbit orbit-a">🧪</div><div class="menu-orbit orbit-b">🔗</div><div class="menu-orbit orbit-c">🧬</div><div class="menu-cauldron">⚗<span></span></div><p>ปรุงความรู้<br />พิชิตทุกด่าน</p></div>
+        </div>
+      </section>
+
+      <section id="learnScreen" class="relative z-10 mx-auto hidden min-h-screen max-w-5xl items-center px-4 py-8 sm:px-6" role="dialog" aria-modal="true" aria-label="สรุปความรู้ก่อนเริ่มเกม">
+        <div class="w-full rounded-3xl border border-white/15 bg-[#2b1848]/90 p-5 shadow-glow backdrop-blur md:p-10">
+          <div class="mb-7 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3"><span class="logo-mark">⚗</span><div><p class="text-xs font-bold tracking-[.24em] text-mint">POLYMER ALCHEMIST</p><h1 class="text-xl font-black sm:text-2xl">เปิดตำราแปรธาตุพอลิเมอร์</h1></div></div>
+            <span id="slideCount" class="rounded-full bg-white/10 px-3 py-1 text-sm text-violet-100">1 / 3 • 30 วินาที</span>
+          </div>
+
+          <div class="overflow-hidden rounded-3xl border border-white/10 bg-[#160d2a]/70">
+            <div id="slides" class="flex transition-transform duration-500 ease-out">
+              <article class="learn-slide flex min-w-full flex-col gap-6 p-6 md:flex-row md:items-center md:p-10">
+                <div class="visual-card additive-art"><span class="visual-emoji">🧴</span><span class="float-icon icon-a">↗</span><span class="float-icon icon-b">〰</span></div>
+                <div class="max-w-xl"><p class="eyebrow">บทที่ 1 • สารเติมแต่ง</p><h2 class="mb-3 text-3xl font-black text-gold">เติมนิดเดียว เปลี่ยนได้มาก</h2><p class="leading-7 text-violet-100">พอลิเมอร์คือวัสดุที่มีโมเลกุลสายยาว เช่น พลาสติกและยาง เราเติมสารพิเศษลงไปเพื่อปรับสมบัติให้เหมาะกับงาน โดยไม่ต้องสร้างพลาสติกใหม่ทั้งชิ้น</p><div class="mt-5 grid gap-2 text-sm sm:grid-cols-2"><span class="fact-pill">🧴 พลาสติไซเซอร์: นิ่มและยืดหยุ่น</span><span class="fact-pill">☀️ สารคงสภาพ: ทนแดดและความร้อน</span><span class="fact-pill">🎨 สี: สวยและมองเห็นง่าย</span><span class="fact-pill">🔥 หน่วงไฟ: ติดไฟยากขึ้น</span></div></div>
+              </article>
+              <article class="learn-slide flex min-w-full flex-col gap-6 p-6 md:flex-row md:items-center md:p-10">
+                <div class="visual-card vulcan-art"><span class="visual-emoji">🔗</span><span class="chain chain-left">●—●—●</span><span class="chain chain-right">●—●—●</span><span class="sulfur-bond">S</span></div>
+                <div class="max-w-xl"><p class="eyebrow">บทที่ 2 • การเชื่อมขวาง</p><h2 class="mb-3 text-3xl font-black text-gold">ทำสายยางให้จับมือกัน</h2><p class="leading-7 text-violet-100">วัลคาไนเซชันคือการให้ความร้อนกับยางธรรมชาติและกำมะถัน (S) กำมะถันจะสร้างสะพานเชื่อมระหว่างสายพอลิเมอร์ ทำให้ยางเด้ง คงรูป ทนร้อน และไม่เปราะเมื่ออากาศเย็น</p><p class="mt-4 rounded-xl border border-mint/25 bg-mint/10 p-3 text-sm text-mint">จำง่าย: “ยาง + กำมะถัน + ความร้อน = ยางที่แกร่งและยืดหยุ่น”</p></div>
+              </article>
+              <article class="learn-slide flex min-w-full flex-col gap-6 p-6 md:flex-row md:items-center md:p-10">
+                <div class="visual-card copolymer-art"><span class="monomer pink">A</span><span class="monomer blue">B</span><span class="poly-chain">A—B—A—B</span><span class="spark">✦</span></div>
+                <div class="max-w-xl"><p class="eyebrow">บทที่ 3 • โคพอลิเมอไรเซชัน</p><h2 class="mb-3 text-3xl font-black text-gold">ผสมจุดเด่นของสองสาย</h2><p class="leading-7 text-violet-100">นำมอนอเมอร์ต่างชนิดมาร่วมสร้างพอลิเมอร์ เพื่อรวมข้อดีของแต่ละชนิดไว้ด้วยกัน รูปแบบการเรียงมีได้แบบสุ่ม สลับ บล็อก หรือกิ่ง แต่เป้าหมายคือวัสดุที่มีสมบัติพอดีกับงาน</p><p class="mt-4 rounded-xl border border-pink-300/25 bg-pink-300/10 p-3 text-sm text-pink-100">ตัวอย่าง: ผสมมอนอเมอร์เพื่อให้วัสดุเหนียว ยืดหยุ่น หรือทนแรงกระแทกมากขึ้น</p></div>
+              </article>
+            </div>
+          </div>
+          <div class="mt-7 flex items-center justify-between gap-3"><button id="backToMenu" class="secondary-btn" type="button">⌂ เมนูหลัก</button><button id="prevSlide" class="secondary-btn" type="button">← ย้อนกลับ</button><div id="dots" class="flex gap-2" aria-label="หน้าบทเรียน"></div><button id="nextSlide" class="primary-btn" type="button">ถัดไป →</button></div>
+        </div>
+      </section>
+
+      <section id="gameScreen" class="relative z-10 mx-auto hidden max-w-7xl px-4 py-5 sm:px-6 lg:py-7">
+        <header class="mb-5 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#2b1848]/85 px-4 py-3 shadow-lg backdrop-blur">
+          <div class="flex items-center gap-3"><span class="logo-mark small">⚗</span><div><h1 class="font-black">Polymer Alchemist</h1><p class="text-xs text-violet-200">ร้านแปรธาตุวัสดุ</p></div></div>
+          <div class="flex items-center gap-2 text-sm"><span class="hidden text-xs text-violet-200 sm:inline">แตะวัตถุดิบเพื่อใส่ลงสูตรทันที</span><button id="learnAgain" class="icon-button" type="button" title="ทบทวนบทเรียน" aria-label="ทบทวนบทเรียน">?</button></div>
+        </header>
+
+        <section class="progress-panel mb-5 rounded-2xl border border-white/10 bg-[#2b1848]/85 p-4 shadow-lg backdrop-blur" aria-label="ความคืบหน้าภารกิจ"><div class="mb-2 flex items-center justify-between text-sm font-bold"><span id="levelProgress">ความคืบหน้า 1 / 5</span><span class="text-violet-200">ภารกิจทั้งหมด 5 ด่าน</span></div><div class="progress-track h-4 overflow-hidden rounded-full border border-gold/20 bg-black/30"><div id="progressBar" class="h-full rounded-full bg-gradient-to-r from-gold to-[#f29d45] transition-[width] duration-500" style="width:20%"></div></div></section>
+
+        <div class="grid gap-5 lg:grid-cols-[minmax(0,1.25fr)_minmax(330px,.75fr)]">
+          <div class="space-y-5">
+            <section class="customer-card relative overflow-hidden rounded-3xl border border-gold/30 bg-gradient-to-r from-[#61326e] to-[#31205d] p-5 shadow-lg sm:p-6">
+              <img id="customerAvatar" class="customer-avatar" src="assets/customers/customer-1.png" alt="ลูกค้าผู้มาขอความช่วยเหลือ" /><div class="relative ml-16 sm:ml-20"><div class="mb-2 flex flex-wrap items-center gap-2"><span class="eyebrow !mb-0">ลูกค้าคนที่ <span id="levelNumber">1</span></span><span id="conceptBadge" class="rounded-full bg-white/15 px-3 py-1 text-xs font-bold text-gold"></span></div><p id="customerDialogue" class="text-lg font-bold leading-7 sm:text-xl"></p></div>
+            </section>
+
+            <section aria-labelledby="shelfTitle" class="rounded-3xl border border-white/10 bg-[#20123c]/90 p-4 shadow-lg sm:p-5"><div class="mb-4 flex items-end justify-between gap-3"><div><p class="eyebrow">ชั้นวัตถุดิบ</p><h2 id="shelfTitle" class="text-xl font-black">แตะส่วนผสมเพื่อใส่ลงหม้อ</h2></div><p class="hidden text-right text-xs text-violet-200 sm:block">แตะแล้วระบบจะวางในช่องที่ถูกต้องให้ทันที</p></div><div id="shelves" class="grid gap-4"></div></section>
+          </div>
+
+          <aside id="alchemyPanel" class="rounded-3xl border border-white/10 bg-[#20123c]/90 p-4 shadow-lg sm:p-5 lg:sticky lg:top-5 lg:h-fit">
+            <div id="recipeHeader" class="mb-4 flex items-center justify-between"><div><p class="eyebrow">สูตรแปรธาตุ</p><h2 class="text-xl font-black">สร้างสมการ 3 ช่อง</h2></div><button id="clearSlots" class="text-sm font-bold text-violet-200 underline decoration-violet-400/50 underline-offset-4" type="button">ล้าง</button></div>
+            <div id="equationSlots" class="space-y-3"></div>
+            <div class="cauldron-wrap my-4"><img class="wizard-cat" src="assets/wizard-cat.png" alt="แมวพ่อมดผู้ช่วยนักเล่นแร่แปรธาตุ" /><span class="stir-spoon" aria-hidden="true"></span><div id="brewIngredients" class="brew-ingredients" aria-live="polite"></div><div class="bubbles"><i></i><i></i><i></i><i></i></div><div class="cauldron"><div class="cauldron-rim"></div><div class="potion-liquid"></div><span>⚗</span></div></div>
+            <div class="mb-4 flex items-center justify-center gap-2 text-sm"><span class="stat-chip">⏱ <strong id="timer">00:00</strong></span><span class="stat-chip penalty">⚠ +<strong id="penalty">0</strong> วินาที</span></div>
+            <button id="submitEquation" class="primary-btn w-full justify-center py-3 text-base" type="button">ร่ายสูตรแปรธาตุ ✨</button>
+            <p id="selectionHelp" class="mt-3 text-center text-xs text-violet-200">เลือกวัตถุดิบจากชั้นเพื่อเติมสูตร</p>
+          </aside>
+        </div>
+
+      </section>
+
+      <div id="feedbackModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><div id="modalIcon" class="mb-3 text-5xl">✨</div><p id="modalKicker" class="eyebrow text-center"></p><h2 id="modalTitle" class="mb-3 text-center text-2xl font-black"></h2><p id="modalText" class="text-center leading-7 text-violet-100"></p><button id="modalAction" class="primary-btn mx-auto mt-6" type="button">ไปต่อ →</button></div></div>
+
+      <div id="studyGuideModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="studyGuideTitle"><article class="study-guide"><header class="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-white/10 bg-[#2d194c] px-5 py-4 sm:px-7"><div><p class="eyebrow">ฐานความรู้พอลิเมอร์</p><h2 id="studyGuideTitle" class="text-2xl font-black">คลังความรู้พอลิเมอร์</h2><p class="mt-1 text-sm text-violet-200">อ่านก่อนเริ่มภารกิจ หรือกลับมาทบทวนได้ทุกเมื่อ</p></div><button id="closeStudyGuide" class="icon-button" type="button" aria-label="ปิดคลังความรู้">×</button></header><div class="space-y-3 p-5 sm:p-7">
+        <details open><summary>1. พอลิเมอร์คืออะไร?</summary><p>พอลิเมอร์คือโมเลกุลขนาดใหญ่ที่เกิดจากมอนอเมอร์จำนวนมากเชื่อมต่อกันด้วยพันธะโควาเลนต์ สายโมเลกุลที่ยาวจึงทำให้พอลิเมอร์โดยทั่วไปมีจุดหลอมเหลว ความเหนียว และความหนืดสูงกว่ามอนอเมอร์</p></details>
+        <details><summary>2. การเกิดพอลิเมอร์: แบบเติมและแบบควบแน่น</summary><p><strong>พอลิเมอไรเซชันแบบเติม</strong> ใช้มอนอเมอร์ที่มีพันธะคู่ ซึ่งเปิดพันธะแล้วต่อเป็นสายยาว โดยไม่มีโมเลกุลเล็กหลุดออก ตัวอย่างคือ PE, PP, PVC, PS และ PTFE</p><p><strong>พอลิเมอไรเซชันแบบควบแน่น</strong> ใช้มอนอเมอร์ที่มีหมู่ฟังก์ชันมากกว่าหนึ่งหมู่ เมื่อเชื่อมต่อกันจะมีโมเลกุลเล็ก เช่น น้ำ หลุดออก ตัวอย่างคือ PET, ไนลอน 6,6 และ PLA</p></details>
+        <details><summary>3. รูปร่างของสายพอลิเมอร์และความร้อน</summary><p><strong>แบบเส้นตรง</strong> เรียงตัวค่อนข้างแน่น จึงให้ความแข็งแรงและอ่อนตัวได้เมื่อร้อน <strong>แบบกิ่ง</strong> เรียงตัวได้ไม่แน่นนัก จึงมักมีความหนาแน่นและจุดหลอมเหลวต่ำกว่าแบบเส้นตรง <strong>แบบร่างแห</strong> มีพันธะเชื่อมขวางระหว่างสาย ทำให้แข็ง คงรูป และไม่ไหลเมื่อร้อน</p><p><strong>เทอร์มอพลาสติก</strong> มีสายเส้นตรงหรือกิ่งเป็นหลัก หลอมและขึ้นรูปใหม่ได้จึงรีไซเคิลได้ ส่วน <strong>เทอร์มอเซต</strong> เป็นร่างแห เมื่อให้ความร้อนมากจะสลายตัวแทนการหลอม</p></details>
+        <details><summary>4. การดัดแปรสมบัติพอลิเมอร์</summary><p><strong>พลาสติไซเซอร์</strong> แทรกระหว่างสายพอลิเมอร์ ทำให้พลาสติกนิ่ม ยืดหยุ่น และเปราะน้อยลง เช่น PVC สำหรับสายยาง</p><p><strong>วัลคาไนเซชัน</strong> ใช้กำมะถันและความร้อนสร้างพันธะเชื่อมขวางในยางธรรมชาติ ทำให้ยางเด้ง คงรูป ทนร้อน และไม่เปราะในอากาศเย็น</p><p><strong>ดัดแปรโครงสร้างเคมี</strong> คือเปลี่ยนหมู่หรือโครงสร้างเพื่อให้ได้สมบัติใหม่ เช่น เซลลูโลสอะซีเตต, ไคโตซาน และ PVA</p></details>
+        <details><summary>5. โคพอลิเมอร์: รวมข้อดีของมอนอเมอร์ต่างชนิด</summary><p>โคพอลิเมอร์มี 4 รูปแบบ: <strong>แบบสุ่ม</strong> (A และ B เรียงไม่แน่นอน), <strong>แบบสลับ</strong> (A-B-A-B), <strong>แบบบล็อก</strong> (AAAA-BBBB) และ <strong>แบบกิ่ง</strong> (สายหลักชนิดหนึ่งมีอีกชนิดเป็นกิ่ง)</p><p>ตัวอย่าง SBR เป็นยางโคพอลิเมอร์ที่ใช้ในงานยาง และ ABS เป็นพอลิเมอร์ผสมที่ช่วยให้วัสดุแข็งแรง เหนียว และทนแรงกระแทก</p></details>
+        <details><summary>6. พอลิเมอร์นำไฟฟ้า</summary><p>พอลิเมอร์ที่มีระบบพันธะคู่สลับกัน หรือระบบคอนจูเกต สามารถให้ประจุเคลื่อนที่ได้ดีขึ้นเมื่อโดปปิง การโดปปิงคือการเติมสารเพื่อเพิ่มหรือดึงอิเล็กตรอน จึงเพิ่มความสามารถในการนำไฟฟ้า</p></details>
+        <details><summary>7. สิ่งแวดล้อมและพลาสติกอย่างรับผิดชอบ</summary><p>ใช้หลัก <strong>Reduce</strong> ลดการใช้ที่ไม่จำเป็น, <strong>Reuse</strong> ใช้ซ้ำอย่างปลอดภัย, และ <strong>Recycle</strong> คัดแยกก่อนรีไซเคิล รหัสพลาสติกคือ 1 PET, 2 HDPE, 3 PVC, 4 LDPE, 5 PP, 6 PS และ 7 อื่น ๆ</p><p>พอลิเมอร์ย่อยสลายได้ เช่น PLA สามารถถูกจุลินทรีย์ เอนไซม์ น้ำ หรือความร้อนช่วยตัดสายโซ่ให้เป็นโมเลกุลเล็กลงได้ภายใต้เงื่อนไขที่เหมาะสม แต่ไม่ได้หมายความว่าย่อยสลายเร็วในทุกสภาพแวดล้อม</p></details>
+      </div></article></div>
+    </main>
+    <script src="src/app.js"></script>
+  </body>
+</html>
