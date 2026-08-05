@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#241445" />
-    <title>Polymer Alchemist | นักเล่นแร่แปรธาตุพอลิเมอร์</title>
+    <title>Wizard Polymer | ก้อนฝุ่นนักเล่นแร่แปรธาตุพอลิเมอร์</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -25,7 +25,7 @@
 
       <section id="mainMenu" class="relative z-10 mx-auto flex min-h-screen max-w-5xl items-center px-4 py-8 sm:px-6">
         <div class="grid w-full overflow-hidden rounded-3xl border border-white/15 bg-[#2b1848]/90 shadow-glow backdrop-blur md:grid-cols-[1.1fr_.9fr]">
-          <div class="p-7 sm:p-10"><div class="mb-6 flex items-center gap-3"><span class="logo-mark">⚗</span><div><p class="text-xs font-bold tracking-[.24em] text-mint">POLYMER ALCHEMIST</p><p class="text-sm text-violet-200">ร้านแปรธาตุวัสดุ</p></div></div><p class="eyebrow">เกมเรียนรู้เคมี ม.ปลาย</p><h1 class="text-4xl font-black leading-tight sm:text-5xl">เปลี่ยนวัสดุธรรมดา<br /><span class="text-gold">ให้พิเศษด้วยเคมี</span></h1><p class="mt-5 max-w-xl leading-7 text-violet-100">รับบทนักเล่นแร่แปรธาตุ แก้ปัญหาวัสดุจริงด้วยพอลิเมอร์ สารเติมแต่ง และสูตรปรับสมบัติ</p><div class="mt-8 flex flex-wrap gap-3"><button id="menuStart" class="primary-btn px-5 py-3 text-base" type="button">เริ่มภารกิจ ✨</button><button id="openStudyGuide" class="secondary-btn px-5 py-3" type="button">📚 คลังความรู้พอลิเมอร์</button></div><p class="mt-4 text-xs text-violet-300">เริ่มเล่นได้ทันที หรืออ่านคู่มือทบทวนทั้งหมดก่อนก็ได้</p></div>
+          <div class="p-7 sm:p-10"><div class="mb-6 flex items-center gap-3"><span class="logo-mark">⚗</span><div><p class="text-xs font-bold tracking-[.24em] text-mint">Wizzard-Cat Polymer</p><p class="text-sm text-violet-200">ก้อนฝุ่นนักเล่นแร่แปรธาตุพอลิเมอร์</p></div></div><p class="eyebrow">เกมเรียนรู้เคมี ม.ปลาย</p><h1 class="text-4xl font-black leading-tight sm:text-5xl">เปลี่ยนวัสดุธรรมดา<br /><span class="text-gold">ให้พิเศษด้วยเคมี</span></h1><p class="mt-5 max-w-xl leading-7 text-violet-100">รับบทนักเล่นแร่แปรธาตุ แก้ปัญหาวัสดุจริงด้วยพอลิเมอร์ สารเติมแต่ง และสูตรปรับสมบัติ</p><div class="mt-8 flex flex-wrap gap-3"><button id="menuStart" class="primary-btn px-5 py-3 text-base" type="button">เริ่มภารกิจ ✨</button><button id="openStudyGuide" class="secondary-btn px-5 py-3" type="button">📚 คลังความรู้พอลิเมอร์</button></div><p class="mt-4 text-xs text-violet-300">เริ่มเล่นได้ทันที หรืออ่านคู่มือทบทวนทั้งหมดก่อนก็ได้</p></div>
           <div class="menu-visual"><div class="menu-orbit orbit-a">🧪</div><div class="menu-orbit orbit-b">🔗</div><div class="menu-orbit orbit-c">🧬</div><div class="menu-cauldron">⚗<span></span></div><p>ปรุงความรู้<br />พิชิตทุกด่าน</p></div>
         </div>
       </section>
@@ -33,7 +33,7 @@
       <section id="learnScreen" class="relative z-10 mx-auto hidden min-h-screen max-w-5xl items-center px-4 py-8 sm:px-6" role="dialog" aria-modal="true" aria-label="สรุปความรู้ก่อนเริ่มเกม">
         <div class="w-full rounded-3xl border border-white/15 bg-[#2b1848]/90 p-5 shadow-glow backdrop-blur md:p-10">
           <div class="mb-7 flex items-center justify-between gap-4">
-            <div class="flex items-center gap-3"><span class="logo-mark">⚗</span><div><p class="text-xs font-bold tracking-[.24em] text-mint">POLYMER ALCHEMIST</p><h1 class="text-xl font-black sm:text-2xl">เปิดตำราแปรธาตุพอลิเมอร์</h1></div></div>
+            <div class="flex items-center gap-3"><span class="logo-mark">⚗</span><div><p class="text-xs font-bold tracking-[.24em] text-mint">Wizzard-Cat Polymer</p><h1 class="text-xl font-black sm:text-2xl">เปิดตำราแปรธาตุพอลิเมอร์</h1></div></div>
             <span id="slideCount" class="rounded-full bg-white/10 px-3 py-1 text-sm text-violet-100">1 / 3 • 30 วินาที</span>
           </div>
 
@@ -59,7 +59,8 @@
 
       <section id="gameScreen" class="relative z-10 mx-auto hidden max-w-7xl px-4 py-5 sm:px-6 lg:py-7">
         <header class="mb-5 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#2b1848]/85 px-4 py-3 shadow-lg backdrop-blur">
-          <div class="flex items-center gap-3"><span class="logo-mark small">⚗</span><div><h1 class="font-black">Polymer Alchemist</h1><p class="text-xs text-violet-200">ร้านแปรธาตุวัสดุ</p></div></div>
+          <div class="flex items-center gap-3"><span class="logo-mark small">⚗</span><div><h1 class="font-black">
+Wizzard-Cat Polymer</h1><p class="text-xs text-violet-200">ก้อนฝุ่นนักเล่นแร่แปรธาตุพอลิเมอร์</p></div></div>
           <div class="flex items-center gap-2 text-sm"><span class="hidden text-xs text-violet-200 sm:inline">แตะวัตถุดิบเพื่อใส่ลงสูตรทันที</span><button id="learnAgain" class="icon-button" type="button" title="ทบทวนบทเรียน" aria-label="ทบทวนบทเรียน">?</button></div>
         </header>
 
